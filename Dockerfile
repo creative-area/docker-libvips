@@ -85,7 +85,7 @@ RUN curl -sOL https://storage.googleapis.com/downloads.webmproject.org/releases/
 		&& make \
 		&& make install
 
-WORKDIR /usr/local/bin
+WORKDIR /
 
 # Cleanup
 RUN apk del --purge build-deps && rm -rf /var/cache/apk/* /tmp/* /var/tmp/*
