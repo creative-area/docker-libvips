@@ -1,5 +1,7 @@
 FROM alpine:3.3
 
+MAINTAINER CREATIVE AREA <contact@creative-area.net>
+
 RUN apk --update add --virtual build-deps \
 	build-base \
 	curl \
