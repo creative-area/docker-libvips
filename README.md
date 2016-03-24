@@ -1,8 +1,10 @@
 # Docker Libvips
 
-[Libvips](https://github.com/jcupitt/libvips) Docker image
+**[Libvips](https://github.com/jcupitt/libvips)** Docker image with Ubuntu 14.04 as base image
 
-> Note that Libvips is built from sources without python and gsf
+**Libvips** and critical libs (libjpeg-turbo, libtiff, libgif, libpng, libwebp) are built from source
+
+> Note that some libvips features are disabled (Python binding, ImageMagick, PangoFT2, MatIO, CFITSIO, OpenEXR, OpenSlide, libPoppler, libRSVG)
 
 ## Usage
 
