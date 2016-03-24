@@ -2,6 +2,9 @@ FROM ubuntu:14.04.4
 
 MAINTAINER CREATIVE AREA <contact@creative-area.net>
 
+# Let the conatiner know that there is no tty
+ENV DEBIAN_FRONTEND noninteractive
+
 # build dependencies
 RUN apt-get update && apt-get install -y \
 	build-essential \
@@ -73,7 +76,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /tmp
 ENV LIBVIPS_VERSION_MAJOR 8
 ENV LIBVIPS_VERSION_MINOR 2
-ENV LIBVIPS_VERSION_PATCH 2
+ENV LIBVIPS_VERSION_PATCH 3
 ENV LIBVIPS_VERSION $LIBVIPS_VERSION_MAJOR.$LIBVIPS_VERSION_MINOR.$LIBVIPS_VERSION_PATCH
 RUN curl -sOL http://www.vips.ecs.soton.ac.uk/supported/$LIBVIPS_VERSION_MAJOR.$LIBVIPS_VERSION_MINOR/vips-$LIBVIPS_VERSION.tar.gz \
 	&& tar zvxf vips-$LIBVIPS_VERSION.tar.gz \

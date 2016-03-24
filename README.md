@@ -8,6 +8,8 @@
 
 ## Usage
 
-```bash
-$ docker run --rm -ti creativearea/libvips vips -v
-```
+The primary goal of this image is to provide a base image for projects based on libvips (there is no default `CMD`). Checkout this [Node Libvips repo](https://github.com/creative-area/docker-node-libvips) and his [Docker Hub automated build](https://hub.docker.com/r/creativearea/node-libvips/).
+
+but it can also be used as is :
+
+`docker run --rm -ti creativearea/libvips vips -v` or `docker run --rm -ti creativearea/libvips vipsthumbnail -v`
