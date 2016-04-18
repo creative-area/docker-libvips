@@ -6,13 +6,15 @@ MAINTAINER CREATIVE AREA <contact@creative-area.net>
 ENV DEBIAN_FRONTEND noninteractive
 
 # build dependencies
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
 	build-essential \
+	ca-certificates \
 	pkg-config \
 	glib2.0-dev \
 	libxml2-dev \
 	curl \
-	yasm
+	yasm \
+	xmlto
 
 # libjpeg-turbo
 ENV LIBJPEG_TURBO_VERSION 1.4.90
@@ -34,22 +36,22 @@ RUN curl -sOL http://download.osgeo.org/libtiff/tiff-$LIBTIFF_VERSION.tar.gz \
 	&& make \
 	&& make install
 
-# libgif
-ENV GIFLIB_VERSION 5.1.3
-WORKDIR /tmp
-RUN curl -sOL http://prdownloads.sourceforge.net/giflib/giflib-$GIFLIB_VERSION.tar.gz \
-	&& tar xzf giflib-$GIFLIB_VERSION.tar.gz \
-	&& cd giflib-$GIFLIB_VERSION \
-	&& ./configure --prefix=/usr \
-	&& make \
-	&& make install
-
 # libpng
 ENV LIBPNG_VERSION 1.6.21
 WORKDIR /tmp
 RUN curl -sOL http://prdownloads.sourceforge.net/libpng/libpng-$LIBPNG_VERSION.tar.gz \
 	&& tar xzf libpng-$LIBPNG_VERSION.tar.gz \
 	&& cd libpng-$LIBPNG_VERSION \
+	&& ./configure --prefix=/usr \
+	&& make \
+	&& make install
+
+# libgif
+ENV GIFLIB_VERSION 4.2.3
+WORKDIR /tmp
+RUN curl -sOL http://prdownloads.sourceforge.net/giflib/giflib-$GIFLIB_VERSION.tar.gz \
+	&& tar xzf giflib-$GIFLIB_VERSION.tar.gz \
+	&& cd giflib-$GIFLIB_VERSION \
 	&& ./configure --prefix=/usr \
 	&& make \
 	&& make install
@@ -75,8 +77,8 @@ RUN apt-get update && apt-get install -y \
 # libvips
 WORKDIR /tmp
 ENV LIBVIPS_VERSION_MAJOR 8
-ENV LIBVIPS_VERSION_MINOR 2
-ENV LIBVIPS_VERSION_PATCH 3
+ENV LIBVIPS_VERSION_MINOR 3
+ENV LIBVIPS_VERSION_PATCH 0
 ENV LIBVIPS_VERSION $LIBVIPS_VERSION_MAJOR.$LIBVIPS_VERSION_MINOR.$LIBVIPS_VERSION_PATCH
 RUN curl -sOL http://www.vips.ecs.soton.ac.uk/supported/$LIBVIPS_VERSION_MAJOR.$LIBVIPS_VERSION_MINOR/vips-$LIBVIPS_VERSION.tar.gz \
 	&& tar zvxf vips-$LIBVIPS_VERSION.tar.gz \
