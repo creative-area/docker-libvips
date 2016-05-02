@@ -1,6 +1,6 @@
 # Docker Libvips
 
-**[Libvips](https://github.com/jcupitt/libvips)** Docker image with Ubuntu 14.04 as base image
+**[Libvips](https://github.com/jcupitt/libvips)** Docker image with Ubuntu 16.04 as base image
 
 **Libvips** and critical libs (libjpeg-turbo, libtiff, giflib, libpng, libwebp) are built from source
 
