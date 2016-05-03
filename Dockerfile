@@ -7,11 +7,36 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # build dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-	build-essential \
+	autoconf \
+	automake \
+	bzip2 \
+	file \
+	g++ \
+	gcc \
+	libbz2-dev \
+	libc6-dev \
+	libcurl4-openssl-dev \
+	libevent-dev \
+	libffi-dev \
+	libgeoip-dev \
+	libglib2.0-dev \
+	liblzma-dev \
+	libncurses-dev \
+	libreadline-dev \
+	libssl-dev \
+	libtool \
+	libxml2-dev \
+	libxslt-dev \
+	libyaml-dev \
+	make \
+	patch \
+	xz-utils \
+	zlib1g-dev \
 	ca-certificates \
 	pkg-config \
-	glib2.0-dev \
-	libxml2-dev \
+	yasm \
+	xmlto \
+	vim \
 	curl \
 	yasm \
 	xmlto
