@@ -72,7 +72,7 @@ RUN curl -sOL http://prdownloads.sourceforge.net/libpng/libpng-$LIBPNG_VERSION.t
 	&& make install
 
 # libgif
-ENV GIFLIB_VERSION 4.2.3
+ENV GIFLIB_VERSION 5.1.4
 WORKDIR /tmp
 RUN curl -sOL http://prdownloads.sourceforge.net/giflib/giflib-$GIFLIB_VERSION.tar.gz \
 	&& tar xzf giflib-$GIFLIB_VERSION.tar.gz \
@@ -103,7 +103,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /tmp
 ENV LIBVIPS_VERSION_MAJOR 8
 ENV LIBVIPS_VERSION_MINOR 3
-ENV LIBVIPS_VERSION_PATCH 0
+ENV LIBVIPS_VERSION_PATCH 1
 ENV LIBVIPS_VERSION $LIBVIPS_VERSION_MAJOR.$LIBVIPS_VERSION_MINOR.$LIBVIPS_VERSION_PATCH
 RUN curl -sOL http://www.vips.ecs.soton.ac.uk/supported/$LIBVIPS_VERSION_MAJOR.$LIBVIPS_VERSION_MINOR/vips-$LIBVIPS_VERSION.tar.gz \
 	&& tar zvxf vips-$LIBVIPS_VERSION.tar.gz \
