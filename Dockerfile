@@ -42,7 +42,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	xmlto
 
 # libjpeg-turbo
-ENV LIBJPEG_TURBO_VERSION 1.4.90
+ENV LIBJPEG_TURBO_VERSION 1.5.0
 WORKDIR /tmp
 RUN curl -sOL http://prdownloads.sourceforge.net/libjpeg-turbo/libjpeg-turbo-$LIBJPEG_TURBO_VERSION.tar.gz \
 	&& tar xzf libjpeg-turbo-$LIBJPEG_TURBO_VERSION.tar.gz \
