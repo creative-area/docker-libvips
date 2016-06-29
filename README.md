@@ -1,10 +1,10 @@
 # Docker Libvips
 
-**[Libvips](https://github.com/jcupitt/libvips)** Docker image with Ubuntu 16.04 as base image
+**[Libvips](https://github.com/jcupitt/libvips)** Docker image with Ubuntu 14.04 as base image
 
-**Libvips** and critical libs (libjpeg-turbo, libtiff, giflib, libpng, libwebp) are built from source
+**Libvips** and critical libs are built from source
 
-> Note that some libvips features are disabled (Python binding, ImageMagick, PangoFT2, MatIO, CFITSIO, OpenEXR, OpenSlide, libPoppler, libRSVG)
+> Note that some libvips features are disabled (Python binding, ImageMagick, PangoFT2, MatIO, CFITSIO, OpenEXR, OpenSlide, libPoppler)
 
 ## Usage
 
@@ -12,4 +12,4 @@ The primary goal of this image is to provide a base image for projects based on 
 
 but it can also be used as is :
 
-`docker run --rm -ti creativearea/libvips vips -v` or `docker run --rm -ti creativearea/libvips vipsthumbnail -h`
+`docker run --rm -t creativearea/libvips vips -v` or `docker run --rm -t creativearea/libvips vipsthumbnail -h`
