@@ -62,7 +62,7 @@ RUN curl -sOL http://ftp.gnome.org/pub/gnome/sources/glib/${GLIB_VERSION_MAJOR}.
 	&& make install-strip
 
 # libxml2
-ENV LIBXML2_VERSION 2.9.3
+ENV LIBXML2_VERSION 2.9.4
 WORKDIR /tmp
 RUN curl -sOL http://xmlsoft.org/sources/libxml2-${LIBXML2_VERSION}.tar.gz \
 	&& tar xzf libxml2-${LIBXML2_VERSION}.tar.gz \
