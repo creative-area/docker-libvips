@@ -125,7 +125,7 @@ RUN curl -sOL http://download.osgeo.org/libtiff/tiff-${LIBTIFF_VERSION}.tar.gz \
 	&& make install-strip
 
 # libpng
-ENV LIBPNG_VERSION 1.6.21
+ENV LIBPNG_VERSION 1.6.23
 WORKDIR /tmp
 RUN curl -sOL http://prdownloads.sourceforge.net/libpng/libpng-${LIBPNG_VERSION}.tar.gz \
 	&& tar xzf libpng-${LIBPNG_VERSION}.tar.gz \
