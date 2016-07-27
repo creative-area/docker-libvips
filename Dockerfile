@@ -145,7 +145,7 @@ RUN curl -sOL http://prdownloads.sourceforge.net/giflib/giflib-${GIFLIB_VERSION}
 	&& make install-strip
 
 # libwebp
-ENV LIBWEBP_VERSION 0.5.0
+ENV LIBWEBP_VERSION 0.5.1
 WORKDIR /tmp
 RUN curl -sOL https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-${LIBWEBP_VERSION}.tar.gz \
 	&& tar xzf libwebp-${LIBWEBP_VERSION}.tar.gz \
