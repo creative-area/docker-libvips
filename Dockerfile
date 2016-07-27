@@ -191,7 +191,7 @@ RUN curl -sOL http://ftp.gnome.org/pub/gnome/sources/libcroco/${LIBCROCO_VERSION
 	&& make install-strip
 
 # freetype
-ENV FREETYPE_VERSION 2.6.3
+ENV FREETYPE_VERSION 2.6.4
 WORKDIR /tmp
 RUN curl -sOL http://download.savannah.gnu.org/releases/freetype/freetype-${FREETYPE_VERSION}.tar.gz \
 	&& tar xzf freetype-${FREETYPE_VERSION}.tar.gz \
@@ -201,7 +201,7 @@ RUN curl -sOL http://download.savannah.gnu.org/releases/freetype/freetype-${FREE
 	&& make install
 
 # fontconfig
-ENV FONTCONFIG_VERSION 2.11.95
+ENV FONTCONFIG_VERSION 2.12.0
 WORKDIR /tmp
 RUN curl -sOL https://www.freedesktop.org/software/fontconfig/release/fontconfig-${FONTCONFIG_VERSION}.tar.bz2 \
 	&& tar xjf fontconfig-${FONTCONFIG_VERSION}.tar.bz2 \
