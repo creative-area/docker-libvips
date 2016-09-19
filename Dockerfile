@@ -120,7 +120,7 @@ WORKDIR /tmp
 RUN curl -sOL http://download.osgeo.org/libtiff/tiff-${LIBTIFF_VERSION}.tar.gz \
 	&& tar xzf tiff-${LIBTIFF_VERSION}.tar.gz \
 	&& cd tiff-${LIBTIFF_VERSION} \
-	&& ./configure --prefix=${DEST} --enable-shared --disable-static \
+	&& ./configure --prefix=${DEST} --enable-shared --disable-static --disable-mdi --disable-cxx \
 	&& make \
 	&& make install-strip
 
@@ -150,7 +150,7 @@ WORKDIR /tmp
 RUN curl -sOL https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-${LIBWEBP_VERSION}.tar.gz \
 	&& tar xzf libwebp-${LIBWEBP_VERSION}.tar.gz \
 	&& cd libwebp-${LIBWEBP_VERSION} \
-	&& ./configure --prefix=${DEST} --enable-shared --disable-static \
+	&& ./configure --prefix=${DEST} --enable-shared --disable-static --disable-neon \
 	&& make \
 	&& make install-strip
 
@@ -173,7 +173,7 @@ WORKDIR /tmp
 RUN curl -sOL http://ftp.gnome.org/pub/gnome/sources/gdk-pixbuf/${GDKPIXBUFF_VERSION_MAJOR}.${GDKPIXBUFF_VERSION_MINOR}/gdk-pixbuf-${GDKPIXBUFF_VERSION}.tar.xz \
 	&& tar xJf gdk-pixbuf-${GDKPIXBUFF_VERSION}.tar.xz \
 	&& cd gdk-pixbuf-${GDKPIXBUFF_VERSION} \
-	&& ./configure --prefix=${DEST} --enable-shared --disable-static --disable-introspection --disable-modules --without-libpng --without-libjpeg --without-libtiff --without-gdiplus \
+	&& ./configure --prefix=${DEST} --enable-shared --disable-static --disable-introspection --disable-modules --disable-gio-sniffing --without-libpng --without-libjpeg --without-libtiff --without-gdiplus --with-included-loaders= \
 	&& make \
 	&& make install-strip
 
@@ -226,7 +226,7 @@ WORKDIR /tmp
 RUN curl -sOL http://cairographics.org/releases/pixman-${PIXMAN_VERSION}.tar.gz \
 	&& tar xzf pixman-${PIXMAN_VERSION}.tar.gz \
 	&& cd pixman-${PIXMAN_VERSION} \
-	&& ./configure --prefix=${DEST} --enable-shared --disable-static --disable-libpng \
+	&& ./configure --prefix=${DEST} --enable-shared --disable-static --disable-libpng --disable-arm-iwmmxt \
 	&& make \
 	&& make install-strip
 
@@ -262,7 +262,7 @@ WORKDIR /tmp
 RUN curl -sOL http://ftp.gnome.org/pub/gnome/sources/librsvg/${LIBRSVG_VERSION_MAJOR}.${LIBRSVG_VERSION_MINOR}/librsvg-${LIBRSVG_VERSION}.tar.xz \
 	&& tar xJf librsvg-${LIBRSVG_VERSION}.tar.xz \
 	&& cd librsvg-${LIBRSVG_VERSION} \
-	&& ./configure --prefix=${DEST} --enable-shared --disable-static --disable-introspection --disable-tools \
+	&& ./configure --prefix=${DEST} --enable-shared --disable-static --disable-introspection --disable-tools --disable-pixbuf-loader \
 	&& make \
 	&& make install-strip
 
