@@ -50,8 +50,8 @@ RUN curl -sOL ftp://sourceware.org/pub/libffi/libffi-${LIBFFI_VERSION}.tar.gz \
 
 # glib
 ENV GLIB_VERSION_MAJOR 2
-ENV GLIB_VERSION_MINOR 48
-ENV GLIB_VERSION_PATCH 1
+ENV GLIB_VERSION_MINOR 49
+ENV GLIB_VERSION_PATCH 4
 ENV GLIB_VERSION ${GLIB_VERSION_MAJOR}.${GLIB_VERSION_MINOR}.${GLIB_VERSION_PATCH}
 WORKDIR /tmp
 RUN curl -sOL http://ftp.gnome.org/pub/gnome/sources/glib/${GLIB_VERSION_MAJOR}.${GLIB_VERSION_MINOR}/glib-${GLIB_VERSION}.tar.xz \
@@ -74,7 +74,7 @@ RUN curl -sOL http://xmlsoft.org/sources/libxml2-${LIBXML2_VERSION}.tar.gz \
 # libgsf
 ENV LIBGSF_VERSION_MAJOR 1
 ENV LIBGSF_VERSION_MINOR 14
-ENV LIBGSF_VERSION_PATCH 36
+ENV LIBGSF_VERSION_PATCH 39
 ENV LIBGSF_VERSION ${LIBGSF_VERSION_MAJOR}.${LIBGSF_VERSION_MINOR}.${LIBGSF_VERSION_PATCH}
 WORKDIR /tmp
 RUN curl -sOL http://ftp.gnome.org/pub/gnome/sources/libgsf/${LIBGSF_VERSION_MAJOR}.${LIBGSF_VERSION_MINOR}/libgsf-${LIBGSF_VERSION}.tar.xz \
@@ -95,7 +95,7 @@ RUN curl -sOL http://prdownloads.sourceforge.net/libexif/libexif-${LIBEXIF_VERSI
 	&& make install-strip
 
 # lcms2
-ENV LCMS2_VERSION 2.7
+ENV LCMS2_VERSION 2.8
 WORKDIR /tmp
 RUN curl -sOL http://prdownloads.sourceforge.net/lcms/lcms2-${LCMS2_VERSION}.tar.gz \
 	&& tar xzf lcms2-${LCMS2_VERSION}.tar.gz \
@@ -125,7 +125,7 @@ RUN curl -sOL http://download.osgeo.org/libtiff/tiff-${LIBTIFF_VERSION}.tar.gz \
 	&& make install-strip
 
 # libpng
-ENV LIBPNG_VERSION 1.6.23
+ENV LIBPNG_VERSION 1.6.25
 WORKDIR /tmp
 RUN curl -sOL http://prdownloads.sourceforge.net/libpng/libpng-${LIBPNG_VERSION}.tar.gz \
 	&& tar xzf libpng-${LIBPNG_VERSION}.tar.gz \
@@ -166,8 +166,8 @@ RUN curl -sOL http://gstreamer.freedesktop.org/data/src/orc/orc-${ORC_VERSION}.t
 
 # gdk-pixbuf
 ENV GDKPIXBUFF_VERSION_MAJOR 2
-ENV GDKPIXBUFF_VERSION_MINOR 34
-ENV GDKPIXBUFF_VERSION_PATCH 0
+ENV GDKPIXBUFF_VERSION_MINOR 35
+ENV GDKPIXBUFF_VERSION_PATCH 2
 ENV GDKPIXBUFF_VERSION ${GDKPIXBUFF_VERSION_MAJOR}.${GDKPIXBUFF_VERSION_MINOR}.${GDKPIXBUFF_VERSION_PATCH}
 WORKDIR /tmp
 RUN curl -sOL http://ftp.gnome.org/pub/gnome/sources/gdk-pixbuf/${GDKPIXBUFF_VERSION_MAJOR}.${GDKPIXBUFF_VERSION_MINOR}/gdk-pixbuf-${GDKPIXBUFF_VERSION}.tar.xz \
@@ -191,7 +191,7 @@ RUN curl -sOL http://ftp.gnome.org/pub/gnome/sources/libcroco/${LIBCROCO_VERSION
 	&& make install-strip
 
 # freetype
-ENV FREETYPE_VERSION 2.6.4
+ENV FREETYPE_VERSION 2.6.5
 WORKDIR /tmp
 RUN curl -sOL http://download.savannah.gnu.org/releases/freetype/freetype-${FREETYPE_VERSION}.tar.gz \
 	&& tar xzf freetype-${FREETYPE_VERSION}.tar.gz \
@@ -211,7 +211,7 @@ RUN curl -sOL https://www.freedesktop.org/software/fontconfig/release/fontconfig
 	&& make install-strip
 
 # harfbuzz
-ENV HARFBUZZ_VERSION 1.2.7
+ENV HARFBUZZ_VERSION 1.3.0
 WORKDIR /tmp
 RUN curl -sOL https://www.freedesktop.org/software/harfbuzz/release/harfbuzz-${HARFBUZZ_VERSION}.tar.bz2 \
 	&& tar xjf harfbuzz-${HARFBUZZ_VERSION}.tar.bz2 \
@@ -270,7 +270,7 @@ RUN curl -sOL http://ftp.gnome.org/pub/gnome/sources/librsvg/${LIBRSVG_VERSION_M
 WORKDIR /tmp
 ENV LIBVIPS_VERSION_MAJOR 8
 ENV LIBVIPS_VERSION_MINOR 3
-ENV LIBVIPS_VERSION_PATCH 2
+ENV LIBVIPS_VERSION_PATCH 3
 ENV LIBVIPS_VERSION ${LIBVIPS_VERSION_MAJOR}.${LIBVIPS_VERSION_MINOR}.${LIBVIPS_VERSION_PATCH}
 RUN curl -sOL http://www.vips.ecs.soton.ac.uk/supported/${LIBVIPS_VERSION_MAJOR}.${LIBVIPS_VERSION_MINOR}/vips-${LIBVIPS_VERSION}.tar.gz \
 	&& tar zxf vips-${LIBVIPS_VERSION}.tar.gz \
