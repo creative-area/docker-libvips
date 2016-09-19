@@ -1,5 +1,8 @@
 # Docker Libvips
 
+
+[![](https://images.microbadger.com/badges/image/creativearea/libvips.svg)](https://microbadger.com/images/creativearea/libvips)
+
 **[Libvips](https://github.com/jcupitt/libvips)** Docker image with Ubuntu 14.04 as base image
 
 **Libvips** and critical libs are built from source
